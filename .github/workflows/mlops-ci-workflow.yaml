@@ -9,7 +9,7 @@ on:
       - main
   
 jobs:
-  e2e_workflow:
+  e2e_mlops_workflow:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -73,7 +73,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: swapnil092/fastapi:{{ github.sha }}
+          tags: swapnil092/fastapi:${{ github.sha }}
           context: "."
           file: "Dockerfile"
 
